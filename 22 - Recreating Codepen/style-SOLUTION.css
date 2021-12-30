@@ -1,3 +1,8 @@
+:root {
+  --grey: #343436;
+  --yellow: #ffc600;
+}
+
 html {
   box-sizing: border-box;
   font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma,
@@ -31,4 +36,69 @@ h6 {
   font-weight: normal;
   margin: 0;
   font-size: 1.5em;
+}
+
+.codepen {
+  display: grid;
+  grid-template-rows: auto 1fr 1fr auto;
+  height: 100vh;
+}
+
+.pen {
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-flow: row wrap;
+  padding: 10px;
+  background: black;
+  color: white;
+}
+
+.pen > * {
+  flex: 1 1 auto;
+}
+
+.pen > *:nth-child(2) {
+  flex: 0 1 auto;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+/* Buttons */
+.button {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  background: var(--grey);
+  color: white;
+  font-size: 16px;
+}
+
+.button--small {
+  font-size: 12px;
+  padding: 4px;
+}
+
+/* .button--dirty:before {
+  background: var(--yellow);
+  display: block;
+  content: '';
+  height: 2px;
+  width: calc(100% - 6px);
+  position: absolute;
+  left: 3px;
+  top: 3px;
+} */
+
+.code {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.preview {
+  display: grid;
+}
+
+.settings {
+
 }
