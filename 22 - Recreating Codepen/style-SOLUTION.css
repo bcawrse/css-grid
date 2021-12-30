@@ -42,11 +42,11 @@ h6 {
   display: grid;
   grid-template-rows: auto 1fr 1fr auto;
   height: 100vh;
+  color: white;
 }
 
 .pen {
   display: flex;
-  /* flex-wrap: wrap; */
   flex-flow: row wrap;
   padding: 10px;
   background: black;
@@ -66,12 +66,13 @@ h6 {
 
 /* Buttons */
 .button {
+  position: relative;
   border: none;
   padding: 10px;
   border-radius: 5px;
   background: var(--grey);
   color: white;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .button--small {
@@ -79,20 +80,55 @@ h6 {
   padding: 4px;
 }
 
-/* .button--dirty:before {
-  background: var(--yellow);
-  display: block;
-  content: '';
-  height: 2px;
-  width: calc(100% - 6px);
+.button--dirty:before {
   position: absolute;
-  left: 3px;
   top: 3px;
-} */
+  left: 3px;
+  content: '';
+  display: block;
+  width: calc(100% - 6px);
+  height: 2px;
+  background: var(--yellow);
+}
 
+/* Editor */ 
 .code {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  background: #1b2b34;
+}
+
+.editor {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.editor__header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 5px;
+  gap: 5px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.editor__code {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.editor__number {
+  display: block;
+  padding: 0 10px;
+}
+
+.editor__input {
+  resize: none;
+  color: grey;
+  font-size: 16px;
+  background: none;
+  border: none;
+  line-height: 19px;
 }
 
 .preview {
@@ -100,5 +136,7 @@ h6 {
 }
 
 .settings {
-
+  padding: 10px;
+  background: black;
+  border-top: 1px solid grey;
 }
